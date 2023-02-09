@@ -5,6 +5,6 @@ public class TestLibrary {
         if (flag) {
             return "hello world!";
         }
-        return "bye world!!!";
+        return "bye world!!";
     }
 }
