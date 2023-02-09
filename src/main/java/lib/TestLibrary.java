@@ -2,7 +2,7 @@ package lib;
 
 public class TestLibrary {
     public static String helloWorld(boolean flag){
-        int tmp = 9;
+        int tmp = 10;
         if (flag) {
             return "hello world!";
         }
