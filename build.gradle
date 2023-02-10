@@ -21,12 +21,19 @@ jacocoTestReport {
         xml.enabled true
     }
 }
+//allprojects {
+//    repositories {
+//        mavenCentral()
+//        maven { url "https://jitpack.io" }
+//    }
+//}
 
 test {
     useJUnitPlatform()
 }
 
 dependencies {
+//    implementation 'com.github.yg0585:opensource-test:1.0.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'org.assertj:assertj-core:3.11.1'
@@ -38,6 +45,7 @@ repositories {
     mavenLocal()
     maven {
         url = uri('https://repo.maven.apache.org/maven2/')
+
     }
 }
 
