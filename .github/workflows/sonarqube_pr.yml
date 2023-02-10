@@ -1,0 +1,23 @@
+name: Analyze master branch and pull requests with SonarQube
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+      types: [ opened, synchronize, reopened ]
+
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Analyze code with SonarQube
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
