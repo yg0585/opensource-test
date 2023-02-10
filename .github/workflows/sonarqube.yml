@@ -15,16 +15,6 @@ jobs:
 
       - name: Analyze code with SonarQube
         uses: sonarsource/sonarqube-scan-action@master
-        with:
-          sonar.host.url: ${{ secrets.SONAR_URL }}
-          sonar.login: ${{ secrets.SONAR_TOKEN }}
-          sonar.projectKey: opensource-test-pr
-          sonar.projectName: opensource-test-pr
-          sonar.branch.name: main
-          sonar.sources: src/main
-          sonar.issuesReport.console.enable: true
-          sonar.tests: src/test
-          sonar.language: java
-          sonar.java.binaries: build/libs
-          sonar.sourceEncoding: UTF-8
-          sonar.scm.provider: git
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
