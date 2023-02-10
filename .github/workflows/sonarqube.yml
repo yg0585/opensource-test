@@ -19,7 +19,7 @@ jobs:
           java-version: 11
 
       - name: Analyze code with SonarQube
-        uses: sonarsource/sonarqube-scanner-github-action@master
+        uses: sonarsource/sonarqube-scan-action@master
         with:
           sonar.host.url: ${{ secrets.SONAR_URL }}
           sonar.login: ${{ secrets.SONAR_TOKEN }}
